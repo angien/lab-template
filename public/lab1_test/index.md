@@ -76,7 +76,7 @@ information present in this prompt may not be in everyone's customizations. This
 brings us to our first task: what is the name of account are we using?
 
 
-# Goal: Get information about the current user
+## Goal: Get information about the current user
 To achieve this goal we will type a command into the shell. This is the way a
 user asks the computer to run a program.  Each command is a single word, the
 name of the program that runs to execute that command.
@@ -112,7 +112,7 @@ composing a tree like structure that creates the overall filesystem. That being
 said just having the name of the directory can be insufficient. What if we want
 to know exactly where and what folder we're currently in the context of?
 
-# Goal: Get the full path of the current directory
+## Goal: Get the full path of the current directory
 To do this we will again use a command: `pwd`, which stands for __p__rint
 __w__orking __d__irectory. A common convention is for command names to either
 describe or be an acronym for their functionality. Let's try it out! Type `pwd`
@@ -159,7 +159,7 @@ around us. In a graphical interface we would likely have a list or grid of icons
 representing the files and directories in the current directory. How can we get
 the same information on the command line?
 
-# Goal: View the contents of a directory
+## Goal: View the contents of a directory
 This time we're going to use the command `ls` to __l__i__s__t the contents of a
 directory.
 
@@ -170,7 +170,7 @@ commands are context sensitive, meaning that they will use the current directory
 in the context of the results displayed. In this case, `ls` will default to showing
 the current directory. Let's try and get the contents of the *Desktop* folder.
 
-# Goal: View the contents of a specified directory
+## Goal: View the contents of a specified directory
 To achieve this we're going to supply the `ls` command with __command line
 arguments__. The __command line arguments__ are a space separated list of
 words following the command name. In this case you need to add the name
@@ -193,7 +193,7 @@ __absolute path__.
 Certainly the lack of output can be rather confusing. How can we tell
 the `ls` command to be a little bit more explicit with the output it gives us?
 
-# Goal: View the contents of a specified directory in more detail
+## Goal: View the contents of a specified directory in more detail
 
 In addition to __command line arguments__, most commands can also take __option flags__.
 Typically, the convention for __option flags__ is a dash followed by one or more letters
@@ -225,7 +225,7 @@ __command line arguments__ in a manner specific to that command. Where can we fi
 information about the usage and syntax for __command line arguments__ of a
 specific command?
 
-# Goal: Get more information on how to use a command
+## Goal: Get more information on how to use a command
 
 There are two main ways to ways to get information about a command from within
 the shell: from the command in question itself and an external command `man`.
@@ -296,7 +296,7 @@ Up until this point we've been doing actions that read the current context and
 give us information about what is around us. How do we begin to create, move,
 copy, and manipulate the filesystem like we would during normal usage?
 
-# Goal: Create, move, and copy files
+## Goal: Create, move, and copy files
 
 It's important to stay organized so let's begin this section by creating a new
 directory where you will put all of the files used in this lab. To do this we
