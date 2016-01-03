@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="../lab_assets/css/bootstrap.css" rel="stylesheet">
+  <link href="../lab_assets/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="../lab_assets/css/CSE15L.css" rel="stylesheet" >
+  <link href="../lab_assets/css/prettify.css" rel="stylesheet">
+  <title class="title"></title>
+</head>
+<body>
+
+
+<header class="navbar-default navbar-fixed-top bs-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand"><a href="http://ieng6.ucsd.edu/~cs15x/labs/">&laquo; CSE 15L</a></div>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Table of Contents</a>
+          <ul id="table_of_contents" class="dropdown-menu text-left">
+            
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<div id="main_content" class="container">
+ 
+</div> <!-- End main_content -->
+
+
+<script type="text/javascript" src="../lab_assets/js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="../lab_assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../lab_assets/js/prettify.js"></script>
+<script type="text/javascript" src="../lab_assets/js/typed.js"></script>
+<script type="text/javascript" src="../lab_assets/js/showdown.min.js"></script>
+<script type="text/javascript">
+(function(jQuery){
+  jQuery( document ).ready( function() {
+    prettyPrint();
+  } );
+}(jQuery))
+
+$.ajax({
+  url: "index.md",
+  context: document.body,
+  success: function(mdText){
+    //where text will be the text returned by the ajax call
+    var converter = new showdown.Converter();
+    converter.setOption('simplifiedAutoLink', true);
+    converter.setOption('tables', true);
+    converter.setOption('parseImgDimensions', true);
+    converter.setOption('strikethrough', true);
+    var htmlText = converter.makeHtml(mdText);
+    $("#main_content").append(htmlText); //append this to a div with class outputDiv
+
+  
+    // use jquery to add anchor links, style h1 a bit more, and add to table of contents
+    $('h1').each(function(i, obj) {
+      if (i == 0) {
+        $(".title").append(obj.innerHTML);
+      }
+      $("<hr id='hrline'>").insertAfter(obj);
+      $("#table_of_contents").append("<li><a href=#"+ obj.id + ">" + obj.innerHTML + "</a></li>");
+    });
+
+
+    // terminal animation at the top
+    $(function(){
+
+      $("#command").typed({
+        strings: ["cat lab_readme.txt"],
+        typeSpeed: 10,
+        callback: function(){ foo(); }
+      });
+
+      function foo(){ console.log("Callback");
+      $(".readme").delay(300).show(0); }
+
+    });
+
+  }
+});
+
+ 
+</script>
+
+
+</body>
+</html>
