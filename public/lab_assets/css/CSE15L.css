@@ -20,6 +20,10 @@ table, th, td {
     border: 1px solid black;
 }
 
+hr {
+  border-top: 3px solid #CCC;
+}
+
 .navbar-brand > a {
   color: #777;
 }
@@ -134,7 +138,7 @@ pre {
 }
 
 #hrline {
-  border-color: black;
+  border-top: 1px solid black;
 }
 
 #command {
